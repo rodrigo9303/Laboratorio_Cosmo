@@ -1,0 +1,42 @@
+\documentclass{report}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{graphicx}
+
+\begin{document}
+	Considerando un conjunto $ y_{1}, y_{2},..., y_{n} $ de variables aleatorias independientes relacionadas con otras variables $ x_{i} $ que se asume conocida sin error. 
+	
+	Cada $ y_{i} $ tiene un valor medio $ \lambda_{i} $ desconocido y una varianza $ \sigma_{i}^{2} $ conocida. Las N medidas de $ y_{i} $ pueden considerarse como las medidas de un vector aleatorio N-dimensional con funci\'on de distribuci\'on de probabilidad
+	
+	\begin{equation*}
+		g(y_{1},...,y_{n}; \lambda_{1},..., \lambda_{n}, \sigma_{1},..., \sigma_{n})=\prod_{i=1}^{N}\dfrac{1}{\sqrt{2\pi\sigma_{i}^{2}}}\exp\left [-\dfrac{(y_{i}-\lambda_{i})^{2}}{2\sigma_{i}^{2}}\right ].
+	\end{equation*}
+	
+	Sse debe de suponer adem\'as que el valor verdadero de las $ y_{i} $ es una funci\'on de la variable $ x $ que depende de un vector de par\'ametros desconocidos en principio.
+	\begin{eqnarray*}
+		\lambda=\lambda(x_{i;\theta})\hspace{2cm} \theta=(\theta_{1},...,\theta_{m}).
+	\end{eqnarray*} 
+	El objetivo de m\'inimos cuadrados es estimar el vector de par\'ametros $ \theta $. Para establecer el m\'etodo tomamos logaritmos en la funci\'on de distribuci\'on de probabilidad que describe los datos.
+	\begin{eqnarray*}
+		&& Ln(g)=A+Ln(\theta) \hspace{1cm}donde \\ && A=\sum_{i=1}^{N}Ln\left [\dfrac{1}{\sqrt{2\pi\sigma_{i}^{2}}}\right ] \\ && Ln[L(\theta)]=-\dfrac{1}{2}\sum_{i=1}^{N}\dfrac{(y_{i}-\lambda_{i})^{2}}{2\sigma_{i}^{2}}
+	\end{eqnarray*}  
+	Para obtener el mejor ajuste se debe minimizar la cantidad $ \chi^{2} $ definida por:
+	\begin{eqnarray*}
+		\xi^{2}(\theta)=\sum_{i=1}^{N}\dfrac{(y_{i}-\lambda_{i})^{2}}{2\sigma_{i}^{2}}
+	\end{eqnarray*}
+	Para minimizarla se debe cumplir que $ \dfrac{d\chi^{2}}{d\theta}=0 $, entonces
+	\begin{eqnarray*}
+		\dfrac{d\chi^{2}}{d\theta}=\left [\dfrac{d\lambda}{d\theta}\right ]^{2}-2y_{i}\dfrac{d\lambda}{d\theta}=0,
+	\end{eqnarray*}
+	resolviendo la ecuaci\'on cuadr\'atica se tiene que:
+	\begin{eqnarray*}
+		\dfrac{d\lambda}{d\theta}=y_{i}\pm y_{i},
+	\end{eqnarray*}
+	el m\'inimo se obtiene para $ 2y_{i} $, por lo que
+	\begin{eqnarray*}
+		\lambda(x_{i},\theta)=ax_{i}+b.
+	\end{eqnarray*}
+	Donde se $ a,b $ son constantes. Se ha tomado el hecho de que las $ y_{i} $ est\'an relacionadas con las $ x_{i} $. As\'i se ha mostrado que el m\'etodo de m\'inimos cuadrados para una recta se obtiene de la minimizaci\'on de la $ \chi^{2} $. 
+\end{document}
