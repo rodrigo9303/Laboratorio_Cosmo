@@ -1,0 +1,23 @@
+\documentclass{report}
+\usepackage[spanish,activeacute]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\begin{document}
+	TEOREMA DE BAYES\\
+	
+	Recordemos que la probabilidad condicional se define como
+	\begin{eqnarray*}
+		&& P(A|B)=\dfrac{P(A\cap B)}{P(B)}=\dfrac{P(A,B)}{P(B)},\\ && por\enspace lo\enspace que \\ && P(A,B)=P(A|B)P(B).
+	\end{eqnarray*}
+	Entonces si se toma que $ P(A,B)=P(B,A) $, se tendr\'a 
+	\begin{eqnarray*}
+	    P(A,B)=P(B,A)\\ && P(A|B)P(B)=P(B|A)P(A)
+	\end{eqnarray*}
+	Finalmente 
+	\begin{equation*}
+	    P(A|B)=\dfrac{P(B|A)P(A)}{P(B)}.
+	\end{equation*}
+	Por lo que el teorema queda derivado.
+\end{document}
